@@ -40,41 +40,6 @@ namespace QuanLyNhaKho.GUI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bus.Delete(tb_ID.Text);
-                MessageBox.Show("Xoá thành công");
-                bus.RefeshDS(dataGridView1, dataSet1);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xóa thất bại");
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (bus.Check(tb_ID.Text) == false)
-            {
-                MessageBox.Show("Mã Trạng Thái đã có trong danh sách");
-            }
-            else
-            {
-                try
-                {
-                    bus.InsertCV(tb_ID.Text, tb_Ten.Text);
-                    MessageBox.Show("Thêm mới thành công");
-                    bus.RefeshDS(dataGridView1, dataSet1);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Thêm mới thất bại");
-                }
-
-            }
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {

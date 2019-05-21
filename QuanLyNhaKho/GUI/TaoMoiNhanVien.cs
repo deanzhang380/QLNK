@@ -79,5 +79,10 @@ namespace QuanLyNhaKho
             tb_MatKhau2.Text = null;
             tb_TenNhanVien.Text = null;
         }
+
+        private void btn_HuyBo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

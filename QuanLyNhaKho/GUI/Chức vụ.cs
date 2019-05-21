@@ -33,27 +33,6 @@ namespace QuanLyNhaKho.GUI
             tb_Ten.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if(bus.Check(tb_ID.Text)==false)
-            {
-                MessageBox.Show("Mã Chức vụ đã có trong danh sách");
-            }
-            else
-            {
-                try
-                {
-                    bus.InsertCV(tb_ID.Text, tb_Ten.Text);
-                    MessageBox.Show("Thêm mới thành công");
-                    bus.RefeshDS(dataGridView1,dataSet1);
-                }catch(Exception)
-                {
-                    MessageBox.Show("Thêm mới thất bại");
-                }
-                
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -68,26 +47,9 @@ namespace QuanLyNhaKho.GUI
            
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            tb_ID.Text = bus.CreateId();
-            tb_Ten.Text = "";
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-           
-            try
-            {
-                bus.Delete(tb_ID.Text);
-                MessageBox.Show("Xoá thành công");
-                bus.RefeshDS(dataGridView1, dataSet1);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xóa thất bại");
-            }
-
+            this.Close();
         }
     }
 }

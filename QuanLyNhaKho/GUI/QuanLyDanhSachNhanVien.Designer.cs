@@ -383,6 +383,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyDanhSachNhanVien";
             this.Text = "QuanLyDanhSachNhanVien";
             this.Load += new System.EventHandler(this.QuanLyDanhSachNhanVien_Load);

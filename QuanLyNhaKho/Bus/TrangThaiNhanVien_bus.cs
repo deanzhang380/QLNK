@@ -38,10 +38,6 @@ namespace QuanLyNhaKho.Bus
             }
 
         }
-        public void InsertCV(string ma, string ten)
-        {
-            sql.InsertTT(ma, ten);
-        }
 
         public bool Check(string ma)
         {
@@ -63,9 +59,5 @@ namespace QuanLyNhaKho.Bus
             dt.DataSource = dataSet1.TRANGTHAINHANVIEN;
         }
 
-        public void Delete(string ma)
-        {
-            sql.DeleteTT(ma);
-        }
     }
 }
