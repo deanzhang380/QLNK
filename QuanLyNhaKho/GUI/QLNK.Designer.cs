@@ -44,6 +44,7 @@
             this.báoCáoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tạoMớiNhàSảnXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +121,8 @@
             // nhàCungỨngToolStripMenuItem
             // 
             this.nhàCungỨngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.danhSáchNhàCungỨngToolStripMenuItem});
+            this.danhSáchNhàCungỨngToolStripMenuItem,
+            this.tạoMớiNhàSảnXuấtToolStripMenuItem});
             this.nhàCungỨngToolStripMenuItem.Name = "nhàCungỨngToolStripMenuItem";
             this.nhàCungỨngToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.nhàCungỨngToolStripMenuItem.Text = "Nhà sản xuất";
@@ -175,6 +177,13 @@
             this.panel1.Size = new System.Drawing.Size(1182, 693);
             this.panel1.TabIndex = 1;
             // 
+            // tạoMớiNhàSảnXuấtToolStripMenuItem
+            // 
+            this.tạoMớiNhàSảnXuấtToolStripMenuItem.Name = "tạoMớiNhàSảnXuấtToolStripMenuItem";
+            this.tạoMớiNhàSảnXuấtToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.tạoMớiNhàSảnXuấtToolStripMenuItem.Text = "Tạo mới nhà sản xuất";
+            this.tạoMớiNhàSảnXuấtToolStripMenuItem.Click += new System.EventHandler(this.tạoMớiNhàSảnXuấtToolStripMenuItem_Click);
+            // 
             // QLNK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,6 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem danhSáchHàngHóaToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem tạoMớiNhàSảnXuấtToolStripMenuItem;
     }
 }
 

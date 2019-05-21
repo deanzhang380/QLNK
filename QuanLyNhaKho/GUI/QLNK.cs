@@ -93,5 +93,15 @@ namespace QuanLyNhaKho
             form.Top = panel1.Height / 2 - form.Height / 2;
             form.Left = panel1.Width / 2 - form.Width / 2;
         }
+
+        private void tạoMớiNhàSảnXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form form = new TaoMoiNhaSanXuat();
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
     }
 }

@@ -74,10 +74,10 @@ namespace QuanLyNhaKho
         void Refesh()
         {
             tb_MaNV.Text = bus.CreateID();
-            tb_TaiKhoan.Text = null;
-            tb_MatKhau.Text = null;
-            tb_MatKhau2.Text = null;
-            tb_TenNhanVien.Text = null;
+            tb_TaiKhoan.Text = "";
+            tb_MatKhau.Text = "";
+            tb_MatKhau2.Text = "";
+            tb_TenNhanVien.Text = "";
         }
 
         private void btn_HuyBo_Click(object sender, EventArgs e)
