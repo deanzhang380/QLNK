@@ -80,7 +80,13 @@ namespace QuanLyNhaKho
 
         private void loạiHangHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
+            Form form = new LoaiHangHoa();
+            SetCenter(form);
+            form.TopLevel = false;
 
+            panel1.Controls.Add(form);
+            form.Show();
         }
 
         private void nhàCungỨngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +108,41 @@ namespace QuanLyNhaKho
             form.TopLevel = false;
             panel1.Controls.Add(form);
             form.Show();
+        }
+
+        private void trạngTháiHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form form = new TrangThaiHangHoa();
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
+
+        private void thêmMớiHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form form = new ThemHangHoa();
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
+
+        private void danhSáchHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form form = new QuanLyDanhSachHangHoa();
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
+
+        private void giớiHạnTồnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

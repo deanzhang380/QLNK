@@ -46,9 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bus\Chucvu_Bus.cs" />
+    <Compile Include="Bus\LoaiHangHoa_bus.cs" />
     <Compile Include="Bus\NhanVien.cs" />
+    <Compile Include="Bus\QuanLyDanhSachHangHoa_bus.cs" />
     <Compile Include="Bus\QuanLyDanhSachNhanVien_Bus.cs" />
     <Compile Include="Bus\TaoMoiNhaSanXuat_bus.cs" />
+    <Compile Include="Bus\ThemHangHoa_bus.cs" />
+    <Compile Include="Bus\TrangThaiHangHoa_bus.cs" />
     <Compile Include="Bus\TrangThaiNhanVien_bus.cs" />
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -64,6 +68,24 @@
     <Compile Include="GUI\Chức vụ.Designer.cs">
       <DependentUpon>Chức vụ.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DonViTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DonViTinh.Designer.cs">
+      <DependentUpon>DonViTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GioiHanTon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GioiHanTon.Designer.cs">
+      <DependentUpon>GioiHanTon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LoaiHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoaiHangHoa.Designer.cs">
+      <DependentUpon>LoaiHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +99,29 @@
     <Compile Include="GUI\QLNK.Designer.cs">
       <DependentUpon>QLNK.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuanLyDanhSachHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyDanhSachHangHoa.Designer.cs">
+      <DependentUpon>QuanLyDanhSachHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TaoMoiNhaSanXuat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\TaoMoiNhaSanXuat.Designer.cs">
       <DependentUpon>TaoMoiNhaSanXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThemHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThemHangHoa.Designer.cs">
+      <DependentUpon>ThemHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TrangThaiHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TrangThaiHangHoa.Designer.cs">
+      <DependentUpon>TrangThaiHangHoa.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\TrangThaiNhanVien.cs">
       <SubType>Form</SubType>
@@ -107,14 +147,32 @@
     <EmbeddedResource Include="GUI\Chức vụ.resx">
       <DependentUpon>Chức vụ.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DonViTinh.resx">
+      <DependentUpon>DonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GioiHanTon.resx">
+      <DependentUpon>GioiHanTon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LoaiHangHoa.resx">
+      <DependentUpon>LoaiHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLNK.resx">
       <DependentUpon>QLNK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyDanhSachHangHoa.resx">
+      <DependentUpon>QuanLyDanhSachHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\TaoMoiNhaSanXuat.resx">
       <DependentUpon>TaoMoiNhaSanXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThemHangHoa.resx">
+      <DependentUpon>ThemHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TrangThaiHangHoa.resx">
+      <DependentUpon>TrangThaiHangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TrangThaiNhanVien.resx">
       <DependentUpon>TrangThaiNhanVien.cs</DependentUpon>
