@@ -70,12 +70,18 @@ namespace QuanLyNhaKho
 
         private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void quảnLýLoạiHàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
+            Form form = new DonViTinh();
+            SetCenter(form);
+            form.TopLevel = false;
 
+            panel1.Controls.Add(form);
+            form.Show();
         }
 
         private void loạiHangHóaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,7 +148,12 @@ namespace QuanLyNhaKho
 
         private void giớiHạnTồnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            panel1.Controls.Clear();
+            Form form = new GioiHanTon();
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
         }
     }
 }

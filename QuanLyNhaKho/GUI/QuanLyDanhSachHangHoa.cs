@@ -30,28 +30,51 @@ namespace QuanLyNhaKho.GUI
             // TODO: This line of code loads data into the 'dataSet1.LOAIHANGHOA' table. You can move, or remove it, as needed.
             this.lOAIHANGHOATableAdapter.Fill(this.dataSet1.LOAIHANGHOA);
             // TODO: This line of code loads data into the 'dataSet1.HANGHOA' table. You can move, or remove it, as needed.
-            this.hANGHOATableAdapter.Fill(this.dataSet1.HANGHOA);
+           
 
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            tb_MaNV.Text= dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            tb_TenNV.Text= dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tb_ID.Text= dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            tb_Ten.Text= dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             cb_LoaiHangHoa.Text = bus.Getnamelhh(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
             cb_Donvi.Text = bus.Getnamedv(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
             cb_Nsx.Text = bus.Getnamensx(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
             cb_TrangThaiHH.Text = bus.Getnametthh(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+            tb_soluongton.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                bus.Update(tb_ID.Text, tb_Ten.Text, cb_TrangThaiHH.SelectedValue.ToString(), cb_LoaiHangHoa.SelectedValue.ToString(),
+                    cb_Donvi.SelectedValue.ToString(), cb_Nsx.SelectedValue.ToString(), Int32.Parse(tb_soluongton.Text));
+                MessageBox.Show("Cập nhật thành công");
+                Refesh();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Cập nhật thất bại");
+                Refesh();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        public void Refesh()
+        {
+            tb_ID.Text = "";
+            tb_Ten.Text = "";
+            tb_soluongton.Text = "";
+            cb_TrangThaiHH.SelectedValue = "";
+            cb_Donvi.SelectedValue = "";
+            cb_LoaiHangHoa.SelectedValue = "";
+            cb_Nsx.SelectedValue = "";
         }
     }
 }

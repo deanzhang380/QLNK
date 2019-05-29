@@ -135,7 +135,7 @@
             this.btn_HuyBo.Name = "btn_HuyBo";
             this.btn_HuyBo.Size = new System.Drawing.Size(125, 46);
             this.btn_HuyBo.TabIndex = 16;
-            this.btn_HuyBo.Text = "Hủy bỏ";
+            this.btn_HuyBo.Text = "Đóng";
             this.btn_HuyBo.UseVisualStyleBackColor = true;
             this.btn_HuyBo.Click += new System.EventHandler(this.btn_HuyBo_Click);
             // 
