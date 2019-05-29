@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bus\Chucvu_Bus.cs" />
+    <Compile Include="Bus\DonViTinh_bus.cs" />
+    <Compile Include="Bus\GioiHanTon_bus.cs" />
     <Compile Include="Bus\LoaiHangHoa_bus.cs" />
     <Compile Include="Bus\NhanVien.cs" />
     <Compile Include="Bus\QuanLyDanhSachHangHoa_bus.cs" />

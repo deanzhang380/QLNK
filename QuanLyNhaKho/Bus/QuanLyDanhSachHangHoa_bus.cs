@@ -14,9 +14,9 @@ namespace QuanLyNhaKho.Bus
         DataSet1TableAdapters.NHASANXUATTableAdapter nsx = new DataSet1TableAdapters.NHASANXUATTableAdapter();
         DataSet1TableAdapters.TRANGTHAIHANGHOATableAdapter tthh = new DataSet1TableAdapters.TRANGTHAIHANGHOATableAdapter();
 
-        public void Update(string ma, string ten, string trangthai,string loai, string dv,string nsx)
+        public void Update(string ma, string ten, string trangthai,string loai, string dv,string nsx,int num)
         {
-            sql.UpdateHH(ten, trangthai, dv, nsx, loai, ma);
+            sql.UpdateHH(ten, trangthai, dv, nsx, loai, num,ma);
         }
 
         public string Getnamedv(string ma)

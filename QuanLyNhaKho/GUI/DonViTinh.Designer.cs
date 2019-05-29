@@ -39,21 +39,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.dataSet1 = new QuanLyNhaKho.DataSet1();
-            this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dONVITINHTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.DONVITINHTableAdapter();
             this.maDonViTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDonViTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new QuanLyNhaKho.DataSet1();
+            this.dONVITINHTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.DONVITINHTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(259, 9);
+            this.label1.Location = new System.Drawing.Point(250, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 29);
             this.label1.TabIndex = 1;
@@ -76,16 +76,18 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(723, 357);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(555, 492);
+            this.button2.Location = new System.Drawing.Point(567, 490);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 50);
             this.button2.TabIndex = 15;
             this.button2.Text = "Đóng";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tb_Ten
             // 
@@ -127,46 +129,35 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 493);
+            this.button1.Location = new System.Drawing.Point(24, 491);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 10;
             this.button1.Text = "Chỉnh sửa";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(192, 493);
+            this.button3.Location = new System.Drawing.Point(204, 491);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(151, 49);
             this.button3.TabIndex = 16;
             this.button3.Text = "Mới";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(368, 493);
+            this.button4.Location = new System.Drawing.Point(380, 491);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(151, 49);
             this.button4.TabIndex = 17;
             this.button4.Text = "Thêm";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dONVITINHBindingSource
-            // 
-            this.dONVITINHBindingSource.DataMember = "DONVITINH";
-            this.dONVITINHBindingSource.DataSource = this.dataSet1;
-            // 
-            // dONVITINHTableAdapter
-            // 
-            this.dONVITINHTableAdapter.ClearBeforeFill = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // maDonViTinhDataGridViewTextBoxColumn
             // 
@@ -181,6 +172,20 @@
             this.tenDonViTinhDataGridViewTextBoxColumn.HeaderText = "TenDonViTinh";
             this.tenDonViTinhDataGridViewTextBoxColumn.Name = "tenDonViTinhDataGridViewTextBoxColumn";
             this.tenDonViTinhDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dONVITINHBindingSource
+            // 
+            this.dONVITINHBindingSource.DataMember = "DONVITINH";
+            this.dONVITINHBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dONVITINHTableAdapter
+            // 
+            this.dONVITINHTableAdapter.ClearBeforeFill = true;
             // 
             // DonViTinh
             // 
@@ -202,8 +207,8 @@
             this.Text = "DonViTinh";
             this.Load += new System.EventHandler(this.DonViTinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

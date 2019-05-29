@@ -38,7 +38,7 @@ namespace QuanLyNhaKho.Bus
 
         public void Insert(string ma, string ten, string loai, string donvi, string trangthai, string nsx)
         {
-            sql.Insert(ma, ten, trangthai, donvi, nsx, loai);
+            sql.Insert(ma, ten, trangthai, donvi, nsx, loai,0);
         }
     }
 }
