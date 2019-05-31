@@ -205,7 +205,7 @@
             this.cb_LoaiHH.Name = "cb_LoaiHH";
             this.cb_LoaiHH.Size = new System.Drawing.Size(169, 33);
             this.cb_LoaiHH.TabIndex = 39;
-            this.cb_LoaiHH.ValueMember = "MaChucVu";
+            this.cb_LoaiHH.ValueMember = "MaLoaiHangHoa";
             // 
             // lOAIHANGHOABindingSource
             // 

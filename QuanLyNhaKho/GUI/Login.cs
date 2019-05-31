@@ -36,7 +36,7 @@ namespace QuanLyNhaKho
                 if (bus.Check(tb_ID.Text, tb_Password.Text) == true)
                 {
                     Form main;
-                    main = new QLNK(bus.GetPermission(tb_ID.Text));
+                    main = new QLNK(bus.GetPermission(tb_ID.Text),bus.GetNameLogin(tb_ID.Text));
                     main.Show();
                     this.Hide();
                 }
