@@ -26,5 +26,10 @@ namespace QuanLyNhaKho
             return s;
 
         }
+
+        public string GetNameLogin(string tk)
+        {
+            return sql.GetName(tk).ToString();
+        }
     }
 }

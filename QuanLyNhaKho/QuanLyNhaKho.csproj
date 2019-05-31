@@ -50,6 +50,8 @@
     <Compile Include="Bus\GioiHanTon_bus.cs" />
     <Compile Include="Bus\LoaiHangHoa_bus.cs" />
     <Compile Include="Bus\NhanVien.cs" />
+    <Compile Include="Bus\PhieuNhap_bus.cs" />
+    <Compile Include="Bus\PhieuXuat_bus.cs" />
     <Compile Include="Bus\QuanLyDanhSachHangHoa_bus.cs" />
     <Compile Include="Bus\QuanLyDanhSachNhanVien_Bus.cs" />
     <Compile Include="Bus\TaoMoiNhaSanXuat_bus.cs" />
@@ -95,6 +97,18 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Bus\Login_Bus.cs" />
+    <Compile Include="GUI\PhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhieuNhap.Designer.cs">
+      <DependentUpon>PhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhieuXuat.Designer.cs">
+      <DependentUpon>PhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QLNK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhieuNhap.resx">
+      <DependentUpon>PhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhieuXuat.resx">
+      <DependentUpon>PhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLNK.resx">
       <DependentUpon>QLNK.cs</DependentUpon>

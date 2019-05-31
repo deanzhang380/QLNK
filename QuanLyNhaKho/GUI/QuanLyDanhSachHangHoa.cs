@@ -30,7 +30,7 @@ namespace QuanLyNhaKho.GUI
             // TODO: This line of code loads data into the 'dataSet1.LOAIHANGHOA' table. You can move, or remove it, as needed.
             this.lOAIHANGHOATableAdapter.Fill(this.dataSet1.LOAIHANGHOA);
             // TODO: This line of code loads data into the 'dataSet1.HANGHOA' table. You can move, or remove it, as needed.
-           
+            this.hanghoaTableAdapter1.Fill(this.dataSet1.HANGHOA);
 
         }
 

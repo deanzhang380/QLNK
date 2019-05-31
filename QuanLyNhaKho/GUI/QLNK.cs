@@ -14,10 +14,12 @@ namespace QuanLyNhaKho
     public partial class QLNK: Form
     {
         string Permission;
-        public QLNK(string per)
+        public string TenNV;
+        public QLNK(string per,string name)
         {
             InitializeComponent();
             Permission = per;
+            TenNV = name;
         }
 
         Form ReturnFrm()
@@ -150,6 +152,26 @@ namespace QuanLyNhaKho
         {
             panel1.Controls.Clear();
             Form form = new GioiHanTon();
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
+
+        private void phiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form form = new PhieuNhap(TenNV,Permission);
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
+
+        private void phiếuXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form form = new PhieuXuat(TenNV, Permission);
             SetCenter(form);
             form.TopLevel = false;
             panel1.Controls.Add(form);
