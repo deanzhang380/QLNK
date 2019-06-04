@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.maLoaiHangHoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiHangHoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lOAIHANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new QuanLyNhaKho.DataSet1();
             this.button4 = new System.Windows.Forms.Button();
             this.tb_Ten = new System.Windows.Forms.TextBox();
             this.tb_ID = new System.Windows.Forms.TextBox();
@@ -39,10 +43,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.maLoaiHangHoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLoaiHangHoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lOAIHANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new QuanLyNhaKho.DataSet1();
             this.lOAIHANGHOATableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.LOAIHANGHOATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOAIHANGHOABindingSource)).BeginInit();
@@ -78,6 +78,30 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
+            // maLoaiHangHoaDataGridViewTextBoxColumn
+            // 
+            this.maLoaiHangHoaDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiHangHoa";
+            this.maLoaiHangHoaDataGridViewTextBoxColumn.HeaderText = "Mã Loại Hàng Hóa";
+            this.maLoaiHangHoaDataGridViewTextBoxColumn.Name = "maLoaiHangHoaDataGridViewTextBoxColumn";
+            this.maLoaiHangHoaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenLoaiHangHoaDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiHangHoaDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiHangHoa";
+            this.tenLoaiHangHoaDataGridViewTextBoxColumn.HeaderText = "Tên Loại Hàng Hóa";
+            this.tenLoaiHangHoaDataGridViewTextBoxColumn.Name = "tenLoaiHangHoaDataGridViewTextBoxColumn";
+            this.tenLoaiHangHoaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lOAIHANGHOABindingSource
+            // 
+            this.lOAIHANGHOABindingSource.DataMember = "LOAIHANGHOA";
+            this.lOAIHANGHOABindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,9 +136,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(331, 438);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 25);
+            this.label3.Size = new System.Drawing.Size(142, 25);
             this.label3.TabIndex = 22;
-            this.label3.Text = "Tên Trạng Thái";
+            this.label3.Text = "Loại Hàng Hóa";
             // 
             // label2
             // 
@@ -122,9 +146,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 438);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 25);
+            this.label2.Size = new System.Drawing.Size(134, 25);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Mã Trạng Thái";
+            this.label2.Text = "Mã Loại Hàng";
             // 
             // button1
             // 
@@ -158,30 +182,6 @@
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // maLoaiHangHoaDataGridViewTextBoxColumn
-            // 
-            this.maLoaiHangHoaDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiHangHoa";
-            this.maLoaiHangHoaDataGridViewTextBoxColumn.HeaderText = "MaLoaiHangHoa";
-            this.maLoaiHangHoaDataGridViewTextBoxColumn.Name = "maLoaiHangHoaDataGridViewTextBoxColumn";
-            this.maLoaiHangHoaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenLoaiHangHoaDataGridViewTextBoxColumn
-            // 
-            this.tenLoaiHangHoaDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiHangHoa";
-            this.tenLoaiHangHoaDataGridViewTextBoxColumn.HeaderText = "TenLoaiHangHoa";
-            this.tenLoaiHangHoaDataGridViewTextBoxColumn.Name = "tenLoaiHangHoaDataGridViewTextBoxColumn";
-            this.tenLoaiHangHoaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lOAIHANGHOABindingSource
-            // 
-            this.lOAIHANGHOABindingSource.DataMember = "LOAIHANGHOA";
-            this.lOAIHANGHOABindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lOAIHANGHOATableAdapter
             // 
@@ -221,8 +221,6 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource lOAIHANGHOABindingSource;
         private DataSet1TableAdapters.LOAIHANGHOATableAdapter lOAIHANGHOATableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiHangHoaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiHangHoaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox tb_Ten;
         private System.Windows.Forms.TextBox tb_ID;
@@ -231,5 +229,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiHangHoaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiHangHoaDataGridViewTextBoxColumn;
     }
 }

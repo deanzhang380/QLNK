@@ -31,8 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.maGioiHanTonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maHangHoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tonToiThieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tonToiDaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gIOIHANTONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new QuanLyNhaKho.DataSet1();
             this.button2 = new System.Windows.Forms.Button();
             this.tb_ID_GHT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,22 +45,16 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cb_IDHH = new System.Windows.Forms.ComboBox();
             this.hANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new QuanLyNhaKho.DataSet1();
-            this.gIOIHANTONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gIOIHANTONTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.GIOIHANTONTableAdapter();
             this.hANGHOATableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.HANGHOATableAdapter();
             this.tb_Min = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_Max = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.maGioiHanTonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maHangHoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tonToiThieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tonToiDaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hANGHOABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIOIHANTONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hANGHOABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,32 +88,48 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
-            // button4
+            // maGioiHanTonDataGridViewTextBoxColumn
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(378, 566);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 49);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.maGioiHanTonDataGridViewTextBoxColumn.DataPropertyName = "MaGioiHanTon";
+            this.maGioiHanTonDataGridViewTextBoxColumn.HeaderText = "Mã giới hạn tồn";
+            this.maGioiHanTonDataGridViewTextBoxColumn.Name = "maGioiHanTonDataGridViewTextBoxColumn";
+            this.maGioiHanTonDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // button3
+            // maHangHoaDataGridViewTextBoxColumn
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(202, 566);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 49);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Mới";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.maHangHoaDataGridViewTextBoxColumn.DataPropertyName = "MaHangHoa";
+            this.maHangHoaDataGridViewTextBoxColumn.HeaderText = "Mã Hàng Hóa";
+            this.maHangHoaDataGridViewTextBoxColumn.Name = "maHangHoaDataGridViewTextBoxColumn";
+            this.maHangHoaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tonToiThieuDataGridViewTextBoxColumn
+            // 
+            this.tonToiThieuDataGridViewTextBoxColumn.DataPropertyName = "TonToiThieu";
+            this.tonToiThieuDataGridViewTextBoxColumn.HeaderText = "Tồn tối thiểu";
+            this.tonToiThieuDataGridViewTextBoxColumn.Name = "tonToiThieuDataGridViewTextBoxColumn";
+            this.tonToiThieuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tonToiDaDataGridViewTextBoxColumn
+            // 
+            this.tonToiDaDataGridViewTextBoxColumn.DataPropertyName = "TonToiDa";
+            this.tonToiDaDataGridViewTextBoxColumn.HeaderText = "Tồn tối đa";
+            this.tonToiDaDataGridViewTextBoxColumn.Name = "tonToiDaDataGridViewTextBoxColumn";
+            this.tonToiDaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gIOIHANTONBindingSource
+            // 
+            this.gIOIHANTONBindingSource.DataMember = "GIOIHANTON";
+            this.gIOIHANTONBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(565, 565);
+            this.button2.Location = new System.Drawing.Point(485, 565);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 50);
             this.button2.TabIndex = 23;
@@ -155,7 +169,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(22, 566);
+            this.button1.Location = new System.Drawing.Point(159, 566);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 18;
@@ -175,6 +189,7 @@
             // 
             this.cb_IDHH.DataSource = this.hANGHOABindingSource;
             this.cb_IDHH.DisplayMember = "MaHangHoa";
+            this.cb_IDHH.Enabled = false;
             this.cb_IDHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_IDHH.FormattingEnabled = true;
             this.cb_IDHH.Location = new System.Drawing.Point(485, 437);
@@ -188,16 +203,6 @@
             this.hANGHOABindingSource.DataMember = "HANGHOA";
             this.hANGHOABindingSource.DataSource = this.dataSet1;
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gIOIHANTONBindingSource
-            // 
-            this.gIOIHANTONBindingSource.DataMember = "GIOIHANTON";
-            this.gIOIHANTONBindingSource.DataSource = this.dataSet1;
-            // 
             // gIOIHANTONTableAdapter
             // 
             this.gIOIHANTONTableAdapter.ClearBeforeFill = true;
@@ -208,7 +213,6 @@
             // 
             // tb_Min
             // 
-            this.tb_Min.Enabled = false;
             this.tb_Min.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Min.Location = new System.Drawing.Point(172, 496);
             this.tb_Min.Name = "tb_Min";
@@ -227,7 +231,6 @@
             // 
             // tb_Max
             // 
-            this.tb_Max.Enabled = false;
             this.tb_Max.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Max.Location = new System.Drawing.Point(485, 496);
             this.tb_Max.Name = "tb_Max";
@@ -244,34 +247,6 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Tồn tối đa";
             // 
-            // maGioiHanTonDataGridViewTextBoxColumn
-            // 
-            this.maGioiHanTonDataGridViewTextBoxColumn.DataPropertyName = "MaGioiHanTon";
-            this.maGioiHanTonDataGridViewTextBoxColumn.HeaderText = "Mã giới hạn tồn";
-            this.maGioiHanTonDataGridViewTextBoxColumn.Name = "maGioiHanTonDataGridViewTextBoxColumn";
-            this.maGioiHanTonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maHangHoaDataGridViewTextBoxColumn
-            // 
-            this.maHangHoaDataGridViewTextBoxColumn.DataPropertyName = "MaHangHoa";
-            this.maHangHoaDataGridViewTextBoxColumn.HeaderText = "Mã Hàng Hóa";
-            this.maHangHoaDataGridViewTextBoxColumn.Name = "maHangHoaDataGridViewTextBoxColumn";
-            this.maHangHoaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tonToiThieuDataGridViewTextBoxColumn
-            // 
-            this.tonToiThieuDataGridViewTextBoxColumn.DataPropertyName = "TonToiThieu";
-            this.tonToiThieuDataGridViewTextBoxColumn.HeaderText = "Tồn tối thiểu";
-            this.tonToiThieuDataGridViewTextBoxColumn.Name = "tonToiThieuDataGridViewTextBoxColumn";
-            this.tonToiThieuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tonToiDaDataGridViewTextBoxColumn
-            // 
-            this.tonToiDaDataGridViewTextBoxColumn.DataPropertyName = "TonToiDa";
-            this.tonToiDaDataGridViewTextBoxColumn.HeaderText = "Tồn tối đa";
-            this.tonToiDaDataGridViewTextBoxColumn.Name = "tonToiDaDataGridViewTextBoxColumn";
-            this.tonToiDaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // GioiHanTon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,8 +258,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cb_IDHH);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tb_ID_GHT);
             this.Controls.Add(this.label4);
@@ -297,9 +270,9 @@
             this.Text = "GioiHanTon";
             this.Load += new System.EventHandler(this.GioiHanTon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hANGHOABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIOIHANTONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hANGHOABindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,8 +282,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tb_ID_GHT;
         private System.Windows.Forms.Label label4;

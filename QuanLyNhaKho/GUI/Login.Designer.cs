@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.nhanvienTableAdapter1 = new QuanLyNhaKho.DataSet1TableAdapters.NHANVIENTableAdapter();
             this.SuspendLayout();
             // 
@@ -89,23 +88,13 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(127, 208);
+            this.button1.Location = new System.Drawing.Point(197, 208);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 51);
             this.button1.TabIndex = 5;
             this.button1.Text = "Đăng Nhập";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(335, 208);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 51);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Tắt";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // nhanvienTableAdapter1
             // 
@@ -116,7 +105,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 319);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_Password);
@@ -139,7 +127,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private DataSet1TableAdapters.NHANVIENTableAdapter nhanvienTableAdapter1;
     }
 }

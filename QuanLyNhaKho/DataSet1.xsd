@@ -62,7 +62,7 @@ SELECT MaHangHoa, MaPhieuNhap, SoLuongNhap, DienGiai FROM CHITIETPHIEUNHAP WHERE
               <Mapping SourceColumn="DienGiai" DataSetColumn="DienGiai" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteCTPN" Modifier="Public" Name="DeleteCTPN" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteCTPN">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteCTPN" Modifier="Public" Name="DeleteCTPN" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteCTPN">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM CHITIETPHIEUNHAP
@@ -86,7 +86,7 @@ WHERE  (CHITIETPHIEUNHAP.MaPhieuNhap = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertCTPN" Modifier="Public" Name="InsertCTPN" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertCTPN">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertCTPN" Modifier="Public" Name="InsertCTPN" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertCTPN">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO CHITIETPHIEUNHAP
@@ -159,7 +159,7 @@ SELECT MaHangHoa, MaPhieuXuat, SoLuongXuat, DienGiai FROM CHITIETPHIEUXUAT WHERE
               <Mapping SourceColumn="DienGiai" DataSetColumn="DienGiai" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteCTPX" Modifier="Public" Name="DeleteCTPX" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteCTPX">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteCTPX" Modifier="Public" Name="DeleteCTPX" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteCTPX">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM CHITIETPHIEUXUAT
@@ -171,7 +171,7 @@ WHERE  (MaHangHoa = @ma) AND (MaPhieuXuat = @ma_pn)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertCTPX" Modifier="Public" Name="InsertCTPX" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertCTPX">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertCTPX" Modifier="Public" Name="InsertCTPX" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertCTPX">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO CHITIETPHIEUXUAT
@@ -635,7 +635,33 @@ ORDER BY MaHangHoa DESC</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.DONVITINH" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameDV" Modifier="Public" Name="GetNameDV" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetNameDV">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.GIOIHANTON" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetMax" Modifier="Public" Name="GetMax" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetMax">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT GIOIHANTON.TonToiDa
+FROM     GIOIHANTON INNER JOIN
+                  HANGHOA ON GIOIHANTON.MaHangHoa = HANGHOA.MaHangHoa
+WHERE  (GIOIHANTON.MaHangHoa = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaHangHoa" DataSourceName="DatabaseQLKho.dbo.GIOIHANTON" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaHangHoa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.GIOIHANTON" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetMin" Modifier="Public" Name="GetMin" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetMin">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT GIOIHANTON.TonToiThieu
+FROM     GIOIHANTON INNER JOIN
+                  HANGHOA ON GIOIHANTON.MaHangHoa = HANGHOA.MaHangHoa
+WHERE  (GIOIHANTON.MaHangHoa = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaHangHoa" DataSourceName="DatabaseQLKho.dbo.GIOIHANTON" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaHangHoa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.DONVITINH" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameDV" Modifier="Public" Name="GetNameDV" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="GetNameDV">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT DONVITINH.TenDonViTinh
@@ -648,7 +674,7 @@ WHERE  (HANGHOA.MaHangHoa = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.HANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameHH" Modifier="Public" Name="GetNameHH" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetNameHH">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.HANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameHH" Modifier="Public" Name="GetNameHH" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="GetNameHH">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>Select TenHangHoa From HangHoa where MaHangHoa=@ma</CommandText>
@@ -658,7 +684,7 @@ WHERE  (HANGHOA.MaHangHoa = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.LOAIHANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameLHH" Modifier="Public" Name="GetNameLHH" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="GetNameLHH">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.LOAIHANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameLHH" Modifier="Public" Name="GetNameLHH" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="GetNameLHH">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT LOAIHANGHOA.TenLoaiHangHoa
@@ -671,7 +697,7 @@ WHERE  (HANGHOA.MaHangHoa = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameNSX" Modifier="Public" Name="GetNameNSX" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="GetNameNSX">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameNSX" Modifier="Public" Name="GetNameNSX" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="GetNameNSX">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT NHASANXUAT.TenNhaSanXuat
@@ -684,7 +710,7 @@ WHERE  (HANGHOA.MaHangHoa = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.TRANGTHAIHANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameTTHH" Modifier="Public" Name="GetNameTTHH" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="GetNameTTHH">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.TRANGTHAIHANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNameTTHH" Modifier="Public" Name="GetNameTTHH" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="GetNameTTHH">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT TRANGTHAIHANGHOA.TenTrangTHaiHang
@@ -697,7 +723,7 @@ WHERE  (HANGHOA.MaHangHoa = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.HANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetSLT" Modifier="Public" Name="GetSLT" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="GetSLT">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.HANGHOA" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetSLT" Modifier="Public" Name="GetSLT" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="GetSLT">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT SoLuongTon
@@ -709,7 +735,7 @@ WHERE  (MaHangHoa = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertHH" Modifier="Public" Name="InsertHH" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="InsertHH">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertHH" Modifier="Public" Name="InsertHH" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="InsertHH">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO HANGHOA
@@ -727,7 +753,7 @@ SELECT MaHangHoa, TenHangHoa, MaTrangThaiHang, MaDonViTinh, MaNhaSanXuat, MaLoai
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateHH" Modifier="Public" Name="UpdateHH" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateHH">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateHH" Modifier="Public" Name="UpdateHH" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="UpdateHH">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE HANGHOA
@@ -746,7 +772,7 @@ WHERE  (MaHangHoa = @ma);
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateSLT" Modifier="Public" Name="UpdateSLT" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="UpdateSLT">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateSLT" Modifier="Public" Name="UpdateSLT" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="UpdateSLT">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE HANGHOA
@@ -756,6 +782,20 @@ WHERE  (MaHangHoa = @ma);
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="SoLuongTon" ColumnName="SoLuongTon" DataSourceName="DatabaseQLKho.dbo.HANGHOA" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SoLuongTon" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SoLuongTon" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaHangHoa" DataSourceName="DatabaseQLKho.dbo.HANGHOA" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaHangHoa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTTHH" Modifier="Public" Name="UpdateTTHH" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="UpdateTTHH">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE HANGHOA
+SET          MaTrangThaiHang = @MaTrangThaiHang
+WHERE  (MaHangHoa = @Original_MaHangHoa); 
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaTrangThaiHang" ColumnName="MaTrangThaiHang" DataSourceName="DatabaseQLKho.dbo.HANGHOA" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@MaTrangThaiHang" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaTrangThaiHang" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_MaHangHoa" ColumnName="MaHangHoa" DataSourceName="DatabaseQLKho.dbo.HANGHOA" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Original_MaHangHoa" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaHangHoa" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -1050,7 +1090,20 @@ WHERE  (MaNhanVien = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetID" Modifier="Public" Name="GetID" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="GetID">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.CHUCVU" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetCV" Modifier="Public" Name="GetCV" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="GetCV">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CHUCVU.MaChucVu
+FROM     NHANVIEN INNER JOIN
+                  CHUCVU ON NHANVIEN.MaChucVu = CHUCVU.MaChucVu
+WHERE  (NHANVIEN.MaNhanVien = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaNhanVien" DataSourceName="DatabaseQLKho.dbo.NHANVIEN" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaNhanVien" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetID" Modifier="Public" Name="GetID" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="GetID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MaNhanVien
@@ -1062,7 +1115,7 @@ WHERE  (TaiKhoan = @Taikhoan)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetName" Modifier="Public" Name="GetName" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="GetName">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetName" Modifier="Public" Name="GetName" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="GetName">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT TenNhanVien
@@ -1074,7 +1127,19 @@ WHERE  (TaiKhoan = @tk)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetPers" Modifier="Public" Name="GetPers" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="GetPers">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNames" Modifier="Public" Name="GetNames" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="GetNames">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TenNhanVien
+FROM     NHANVIEN
+WHERE  (MaNhanVien = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaNhanVien" DataSourceName="DatabaseQLKho.dbo.NHANVIEN" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaNhanVien" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetPers" Modifier="Public" Name="GetPers" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="GetPers">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MaNhanVien 
@@ -1086,7 +1151,7 @@ WHERE  (TaiKhoan = @Taikhoan)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNV" Modifier="Public" Name="InsertNV" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="InsertNV">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNV" Modifier="Public" Name="InsertNV" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="InsertNV">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO NHANVIEN
@@ -1105,7 +1170,7 @@ SELECT MaNhanVien, TenNhanVien, TaiKhoan, MatKhau, MaTrangThaiNhanVien, MaChucVu
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="ScalarQuery">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHANVIEN" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) MaNhanVien
@@ -1115,7 +1180,7 @@ ORDER BY MaNhanVien DESC</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateNV" Modifier="Public" Name="UpdateNV" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateNV">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateNV" Modifier="Public" Name="UpdateNV" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="UpdateNV">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE NHANVIEN
@@ -1197,7 +1262,31 @@ SELECT MaNhaSanXuat, TenNhaSanXuat, DiaChi, DienThoai FROM NHASANXUAT WHERE (MaN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetName" Modifier="Public" Name="GetName" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetName">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetDC" Modifier="Public" Name="GetDC" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetDC">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DiaChi
+FROM     NHASANXUAT
+WHERE  (MaNhaSanXuat = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaNhaSanXuat" DataSourceName="DatabaseQLKho.dbo.NHASANXUAT" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaNhaSanXuat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetDT" Modifier="Public" Name="GetDT" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetDT">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Dienthoai
+FROM     NHASANXUAT
+WHERE  (MaNhaSanXuat = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaNhaSanXuat" DataSourceName="DatabaseQLKho.dbo.NHASANXUAT" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaNhaSanXuat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetName" Modifier="Public" Name="GetName" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetName">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT TenNhaSanXuat
@@ -1209,7 +1298,7 @@ WHERE  (MaNhaSanXuat = @ma)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNSX" Modifier="Public" Name="InsertNSX" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertNSX">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNSX" Modifier="Public" Name="InsertNSX" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InsertNSX">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO NHASANXUAT
@@ -1225,7 +1314,7 @@ VALUES (@MaNhaSanXuat,@TenNhaSanXuat,@DiaChi,@DienThoai);
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="LastID" Modifier="Public" Name="LastID" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="LastID">
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.NHASANXUAT" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="LastID" Modifier="Public" Name="LastID" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="LastID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT TOP (1) MaNhaSanXuat
@@ -1234,6 +1323,22 @@ ORDER BY MaNhaSanXuat DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateNSX" Modifier="Public" Name="UpdateNSX" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateNSX">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE NHASANXUAT
+SET          TenNhaSanXuat = @TenNhaSanXuat, DiaChi = @DiaChi, DienThoai = @DienThoai
+WHERE  (MaNhaSanXuat = @ma); 
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="TenNhaSanXuat" ColumnName="TenNhaSanXuat" DataSourceName="DatabaseQLKho.dbo.NHASANXUAT" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@TenNhaSanXuat" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="TenNhaSanXuat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DiaChi" ColumnName="DiaChi" DataSourceName="DatabaseQLKho.dbo.NHASANXUAT" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@DiaChi" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="DiaChi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DienThoai" ColumnName="DienThoai" DataSourceName="DatabaseQLKho.dbo.NHASANXUAT" DataTypeServer="nchar(20)" DbType="String" Direction="Input" ParameterName="@DienThoai" Precision="0" ProviderType="NChar" Scale="0" Size="20" SourceColumn="DienThoai" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaNhaSanXuat" DataSourceName="DatabaseQLKho.dbo.NHASANXUAT" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaNhaSanXuat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -1319,6 +1424,70 @@ SELECT MaPhieuNhap, MaLoaiPhieuXuatNhap, MaNhanVien, MaTrangThaiPhieu, NgayLapPh
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDate" GeneratorSourceName="FillByDate" GetMethodModifier="Public" GetMethodName="GetDataByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDate" UserSourceName="FillByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap, MaLoaiPhieuXuatNhap, MaNhanVien, MaTrangThaiPhieu, NgayLapPhieu, NgayNhap, NoiDung
+FROM     PHIEUNHAP
+WHERE  (NgayLapPhieu = @day)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="day" ColumnName="NgayLapPhieu" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@day" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="NgayLapPhieu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByLoaiPhieuXuatNhap" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy7" GeneratorSourceName="FillByLoaiPhieuXuatNhap" GetMethodModifier="Public" GetMethodName="GetDataBy7" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="FillByLoaiPhieuXuatNhap">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (MaLoaiPhieuXuatNhap=@ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaLoaiPhieuXuatNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Mã Loại Phiếu Xuất" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNgayLapPhieu" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy5" GeneratorSourceName="FillByNgayLapPhieu" GetMethodModifier="Public" GetMethodName="GetDataBy5" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="FillByNgayLapPhieu">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (NgayLapPhieu = @ngay)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ngay" ColumnName="NgayLapPhieu" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@ngay" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNgayNhap" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy6" GeneratorSourceName="FillByNgayNhap" GetMethodModifier="Public" GetMethodName="GetDataBy6" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="FillByNgayNhap">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (NgayNhap = @ngay)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ngay" ColumnName="NgayNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@ngay" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Ngày Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTrangThaiPhieu" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy8" GeneratorSourceName="FillByTrangThaiPhieu" GetMethodModifier="Public" GetMethodName="GetDataBy8" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="FillByTrangThaiPhieu">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (MaTrangThaiPhieu = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaTrangThaiPhieu" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Mã Trạng Thái Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.DONVITINH" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetDVHH" Modifier="Public" Name="GetDVHH" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetDVHH">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -1372,6 +1541,23 @@ VALUES (@MaPhieuNhap,@MaLoaiPhieuXuatNhap,@MaNhanVien,@MaTrangThaiPhieu,@NgayLap
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePN" Modifier="Public" Name="UpdatePN" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdatePN">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE PHIEUNHAP
+SET          MaLoaiPhieuXuatNhap = @MaLoaiPhieuXuatNhap, MaTrangThaiPhieu = @MaTrangThaiPhieu,  NgayNhap = @NgayNhap, NoiDung = @NoiDung
+WHERE  (MaPhieuNhap = @ma); 
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaLoaiPhieuXuatNhap" ColumnName="MaLoaiPhieuXuatNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@MaLoaiPhieuXuatNhap" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaLoaiPhieuXuatNhap" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaTrangThaiPhieu" ColumnName="MaTrangThaiPhieu" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@MaTrangThaiPhieu" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaTrangThaiPhieu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NgayNhap" ColumnName="NgayNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@NgayNhap" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="NgayNhap" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NoiDung" ColumnName="NoiDung" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@NoiDung" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="NoiDung" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaPhieuNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MaPhieuNhap" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -1801,6 +1987,128 @@ WHERE  (CHITIETPHIEUXUAT.MaPhieuXuat = @ma)</CommandText>
               <Mapping SourceColumn="Diễn Giải" DataSetColumn="Diễn Giải" />
             </Mappings>
             <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Search_PhieuNhapTableAdapter" GeneratorDataComponentClassName="Search_PhieuNhapTableAdapter" Name="Search_PhieuNhap" UserDataComponentName="Search_PhieuNhapTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNgayLapPhieu" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="FillByNgayLapPhieu" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="FillByNgayLapPhieu">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [PHIEUNHAP] WHERE (([MaPhieuNhap] = @Original_Mã_Phiếu_Nhập) AND ([MaLoaiPhieuXuatNhap] = @Original_Mã_Loại_Phiếu_Xuất) AND ([MaNhanVien] = @Original_Mã_Nhân_Viên) AND ([MaTrangThaiPhieu] = @Original_Mã_Trạng_Thái_Phiếu) AND ((@IsNull_Ngày_Lập_Phiếu = 1 AND [NgayLapPhieu] IS NULL) OR ([NgayLapPhieu] = @Original_Ngày_Lập_Phiếu)) AND ((@IsNull_Ngày_Nhập = 1 AND [NgayNhap] IS NULL) OR ([NgayNhap] = @Original_Ngày_Nhập)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Phiếu_Nhập" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Phiếu Nhập" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Loại_Phiếu_Xuất" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Loại Phiếu Xuất" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Nhân_Viên" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Nhân Viên" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Trạng_Thái_Phiếu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Trạng Thái Phiếu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Ngày_Lập_Phiếu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Ngày_Lập_Phiếu" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Ngày_Nhập" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Ngày Nhập" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Ngày_Nhập" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Nhập" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [PHIEUNHAP] ([MaPhieuNhap], [MaLoaiPhieuXuatNhap], [MaNhanVien], [MaTrangThaiPhieu], [NgayLapPhieu], [NgayNhap], [NoiDung]) VALUES (@Mã_Phiếu_Nhập, @Mã_Loại_Phiếu_Xuất, @Mã_Nhân_Viên, @Mã_Trạng_Thái_Phiếu, @Ngày_Lập_Phiếu, @Ngày_Nhập, @Nội_Dung);
+SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], NoiDung AS [Nội Dung] FROM PHIEUNHAP WHERE (MaPhieuNhap = @MaPhieuNhap)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Phiếu_Nhập" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Phiếu Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Loại_Phiếu_Xuất" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Loại Phiếu Xuất" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Nhân_Viên" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Nhân Viên" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Trạng_Thái_Phiếu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Trạng Thái Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Ngày_Lập_Phiếu" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Ngày_Nhập" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Nội_Dung" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nội Dung" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaPhieuNhap" ColumnName="MaPhieuNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@MaPhieuNhap" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Mã Phiếu Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (NgayLapPhieu = @ngay)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ngay" ColumnName="NgayLapPhieu" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@ngay" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [PHIEUNHAP] SET [MaPhieuNhap] = @Mã_Phiếu_Nhập, [MaLoaiPhieuXuatNhap] = @Mã_Loại_Phiếu_Xuất, [MaNhanVien] = @Mã_Nhân_Viên, [MaTrangThaiPhieu] = @Mã_Trạng_Thái_Phiếu, [NgayLapPhieu] = @Ngày_Lập_Phiếu, [NgayNhap] = @Ngày_Nhập, [NoiDung] = @Nội_Dung WHERE (([MaPhieuNhap] = @Original_Mã_Phiếu_Nhập) AND ([MaLoaiPhieuXuatNhap] = @Original_Mã_Loại_Phiếu_Xuất) AND ([MaNhanVien] = @Original_Mã_Nhân_Viên) AND ([MaTrangThaiPhieu] = @Original_Mã_Trạng_Thái_Phiếu) AND ((@IsNull_Ngày_Lập_Phiếu = 1 AND [NgayLapPhieu] IS NULL) OR ([NgayLapPhieu] = @Original_Ngày_Lập_Phiếu)) AND ((@IsNull_Ngày_Nhập = 1 AND [NgayNhap] IS NULL) OR ([NgayNhap] = @Original_Ngày_Nhập)));
+SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], NoiDung AS [Nội Dung] FROM PHIEUNHAP WHERE (MaPhieuNhap = @MaPhieuNhap)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Phiếu_Nhập" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Phiếu Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Loại_Phiếu_Xuất" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Loại Phiếu Xuất" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Nhân_Viên" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Nhân Viên" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Mã_Trạng_Thái_Phiếu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Trạng Thái Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Ngày_Lập_Phiếu" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Ngày_Nhập" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Nội_Dung" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nội Dung" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Phiếu_Nhập" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Phiếu Nhập" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Loại_Phiếu_Xuất" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Loại Phiếu Xuất" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Nhân_Viên" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Nhân Viên" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Mã_Trạng_Thái_Phiếu" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Mã Trạng Thái Phiếu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Ngày_Lập_Phiếu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Ngày_Lập_Phiếu" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Lập Phiếu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Ngày_Nhập" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Ngày Nhập" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_Ngày_Nhập" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ngày Nhập" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaPhieuNhap" ColumnName="MaPhieuNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@MaPhieuNhap" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Mã Phiếu Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Mã Phiếu Nhập" DataSetColumn="Mã Phiếu Nhập" />
+              <Mapping SourceColumn="Mã Loại Phiếu Xuất" DataSetColumn="Mã Loại Phiếu Xuất Nhập" />
+              <Mapping SourceColumn="Mã Nhân Viên" DataSetColumn="Mã Nhân Viên" />
+              <Mapping SourceColumn="Mã Trạng Thái Phiếu" DataSetColumn="Mã Trạng Thái Phiếu" />
+              <Mapping SourceColumn="Ngày Lập Phiếu" DataSetColumn="Ngày Lập Phiếu" />
+              <Mapping SourceColumn="Ngày Nhập" DataSetColumn="Ngày Nhập" />
+              <Mapping SourceColumn="Nội Dung" DataSetColumn="Nội Dung" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByLoaiPhieu" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByLoaiPhieu" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByLoaiPhieu">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (MaLoaiPhieuXuatNhap=@ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaLoaiPhieuXuatNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Mã Loại Phiếu Xuất" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNgayNhap" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByNgayNhap" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByNgayNhap">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (NgayNhap = @ngay)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ngay" ColumnName="NgayNhap" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@ngay" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Ngày Nhập" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseQLKhoConnectionString (Settings)" DbObjectName="DatabaseQLKho.dbo.PHIEUNHAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTTP" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillByTTP" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByTTP">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MaPhieuNhap AS [Mã Phiếu Nhập], MaLoaiPhieuXuatNhap AS [Mã Loại Phiếu Xuất], MaNhanVien AS [Mã Nhân Viên], MaTrangThaiPhieu AS [Mã Trạng Thái Phiếu], NgayLapPhieu AS [Ngày Lập Phiếu], NgayNhap AS [Ngày Nhập], 
+                  NoiDung AS [Nội Dung]
+FROM     PHIEUNHAP
+WHERE  (MaTrangThaiPhieu = @ma)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ma" ColumnName="MaTrangThaiPhieu" DataSourceName="DatabaseQLKho.dbo.PHIEUNHAP" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ma" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Mã Trạng Thái Phiếu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -2320,6 +2628,49 @@ WHERE  (CHITIETPHIEUXUAT.MaPhieuXuat = @ma)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Search_PhieuNhap" msprop:Generator_TableClassName="Search_PhieuNhapDataTable" msprop:Generator_TableVarName="tableSearch_PhieuNhap" msprop:Generator_RowChangedName="Search_PhieuNhapRowChanged" msprop:Generator_TablePropName="Search_PhieuNhap" msprop:Generator_RowDeletingName="Search_PhieuNhapRowDeleting" msprop:Generator_RowChangingName="Search_PhieuNhapRowChanging" msprop:Generator_RowEvHandlerName="Search_PhieuNhapRowChangeEventHandler" msprop:Generator_RowDeletedName="Search_PhieuNhapRowDeleted" msprop:Generator_RowClassName="Search_PhieuNhapRow" msprop:Generator_UserTableName="Search_PhieuNhap" msprop:Generator_RowEvArgName="Search_PhieuNhapRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mã_x0020_Phiếu_x0020_Nhập" msprop:Generator_ColumnVarNameInTable="columnMã_Phiếu_Nhập" msprop:Generator_ColumnPropNameInRow="Mã_Phiếu_Nhập" msprop:Generator_ColumnPropNameInTable="Mã_Phiếu_NhậpColumn" msprop:Generator_UserColumnName="Mã Phiếu Nhập">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mã_x0020_Loại_x0020_Phiếu_x0020_Xuất_x0020_Nhập" msprop:Generator_ColumnVarNameInTable="columnMã_Loại_Phiếu_Xuất_Nhập" msprop:Generator_ColumnPropNameInRow="Mã_Loại_Phiếu_Xuất_Nhập" msprop:Generator_ColumnPropNameInTable="Mã_Loại_Phiếu_Xuất_NhậpColumn" msprop:Generator_UserColumnName="Mã Loại Phiếu Xuất Nhập">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mã_x0020_Nhân_x0020_Viên" msprop:Generator_ColumnVarNameInTable="columnMã_Nhân_Viên" msprop:Generator_ColumnPropNameInRow="Mã_Nhân_Viên" msprop:Generator_ColumnPropNameInTable="Mã_Nhân_ViênColumn" msprop:Generator_UserColumnName="Mã Nhân Viên">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mã_x0020_Trạng_x0020_Thái_x0020_Phiếu" msprop:Generator_ColumnVarNameInTable="columnMã_Trạng_Thái_Phiếu" msprop:Generator_ColumnPropNameInRow="Mã_Trạng_Thái_Phiếu" msprop:Generator_ColumnPropNameInTable="Mã_Trạng_Thái_PhiếuColumn" msprop:Generator_UserColumnName="Mã Trạng Thái Phiếu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ngày_x0020_Lập_x0020_Phiếu" msprop:Generator_ColumnVarNameInTable="columnNgày_Lập_Phiếu" msprop:Generator_ColumnPropNameInRow="Ngày_Lập_Phiếu" msprop:Generator_ColumnPropNameInTable="Ngày_Lập_PhiếuColumn" msprop:Generator_UserColumnName="Ngày Lập Phiếu" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Ngày_x0020_Nhập" msprop:Generator_ColumnVarNameInTable="columnNgày_Nhập" msprop:Generator_ColumnPropNameInRow="Ngày_Nhập" msprop:Generator_ColumnPropNameInTable="Ngày_NhậpColumn" msprop:Generator_UserColumnName="Ngày Nhập" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Nội_x0020_Dung" msprop:Generator_ColumnVarNameInTable="columnNội_Dung" msprop:Generator_ColumnPropNameInRow="Nội_Dung" msprop:Generator_ColumnPropNameInTable="Nội_DungColumn" msprop:Generator_UserColumnName="Nội Dung" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2383,6 +2734,10 @@ WHERE  (CHITIETPHIEUXUAT.MaPhieuXuat = @ma)</CommandText>
     <xs:unique name="TRANGTHAINHAPXUAT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TRANGTHAINHAPXUAT" />
       <xs:field xpath="mstns:MaTrangThaiPhieu" />
+    </xs:unique>
+    <xs:unique name="Search_PhieuNhap_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Search_PhieuNhap" />
+      <xs:field xpath="mstns:Mã_x0020_Phiếu_x0020_Nhập" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

@@ -123,18 +123,6 @@ namespace QuanLyNhaKho.GUI
             cb_MaHH.SelectedValue = "";
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ma_pn = tb_searchPN.Text;
-                bus.RefeshDS(dataGridView1, dataSet1, tb_searchPN.Text);
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Không tìm thấy thông tin phiếu nhập");
-            }
-           
-        }
+       
     }
 }

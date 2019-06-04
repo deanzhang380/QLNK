@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label9 = new System.Windows.Forms.Label();
             this.btn_HuyBo = new System.Windows.Forms.Button();
             this.btn_LamLai = new System.Windows.Forms.Button();
             this.btn_TaoMoi = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@
             this.tb_TenHH = new System.Windows.Forms.TextBox();
             this.cb_LoaiHH = new System.Windows.Forms.ComboBox();
             this.lOAIHANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cb_TrangThaiHH = new System.Windows.Forms.ComboBox();
             this.tRANGTHAIHANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOAIHANGHOATableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.LOAIHANGHOATableAdapter();
             this.dONVITINHTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.DONVITINHTableAdapter();
@@ -55,6 +53,10 @@
             this.dataSet11 = new QuanLyNhaKho.DataSet1();
             this.label6 = new System.Windows.Forms.Label();
             this.nHASANXUATTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.NHASANXUATTableAdapter();
+            this.tb_min = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_max = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOAIHANGHOABindingSource)).BeginInit();
@@ -62,16 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nHASANXUATBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(79, 289);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(160, 25);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Trạng Thái Hàng";
             // 
             // btn_HuyBo
             // 
@@ -110,7 +102,7 @@
             // 
             this.tb_MaHH.Enabled = false;
             this.tb_MaHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_MaHH.Location = new System.Drawing.Point(297, 74);
+            this.tb_MaHH.Location = new System.Drawing.Point(238, 74);
             this.tb_MaHH.Name = "tb_MaHH";
             this.tb_MaHH.Size = new System.Drawing.Size(169, 30);
             this.tb_MaHH.TabIndex = 27;
@@ -121,7 +113,7 @@
             this.cb_Donvi.DisplayMember = "TenDonViTinh";
             this.cb_Donvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Donvi.FormattingEnabled = true;
-            this.cb_Donvi.Location = new System.Drawing.Point(297, 236);
+            this.cb_Donvi.Location = new System.Drawing.Point(238, 233);
             this.cb_Donvi.Name = "cb_Donvi";
             this.cb_Donvi.Size = new System.Drawing.Size(169, 33);
             this.cb_Donvi.TabIndex = 26;
@@ -190,7 +182,7 @@
             // tb_TenHH
             // 
             this.tb_TenHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_TenHH.Location = new System.Drawing.Point(297, 128);
+            this.tb_TenHH.Location = new System.Drawing.Point(238, 128);
             this.tb_TenHH.Name = "tb_TenHH";
             this.tb_TenHH.Size = new System.Drawing.Size(330, 30);
             this.tb_TenHH.TabIndex = 28;
@@ -201,7 +193,7 @@
             this.cb_LoaiHH.DisplayMember = "TenLoaiHangHoa";
             this.cb_LoaiHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_LoaiHH.FormattingEnabled = true;
-            this.cb_LoaiHH.Location = new System.Drawing.Point(297, 176);
+            this.cb_LoaiHH.Location = new System.Drawing.Point(238, 179);
             this.cb_LoaiHH.Name = "cb_LoaiHH";
             this.cb_LoaiHH.Size = new System.Drawing.Size(169, 33);
             this.cb_LoaiHH.TabIndex = 39;
@@ -211,18 +203,6 @@
             // 
             this.lOAIHANGHOABindingSource.DataMember = "LOAIHANGHOA";
             this.lOAIHANGHOABindingSource.DataSource = this.dataSet1;
-            // 
-            // cb_TrangThaiHH
-            // 
-            this.cb_TrangThaiHH.DataSource = this.tRANGTHAIHANGHOABindingSource;
-            this.cb_TrangThaiHH.DisplayMember = "TenTrangTHaiHang";
-            this.cb_TrangThaiHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_TrangThaiHH.FormattingEnabled = true;
-            this.cb_TrangThaiHH.Location = new System.Drawing.Point(297, 286);
-            this.cb_TrangThaiHH.Name = "cb_TrangThaiHH";
-            this.cb_TrangThaiHH.Size = new System.Drawing.Size(169, 33);
-            this.cb_TrangThaiHH.TabIndex = 40;
-            this.cb_TrangThaiHH.ValueMember = "MaTrangThaiHang";
             // 
             // tRANGTHAIHANGHOABindingSource
             // 
@@ -247,7 +227,7 @@
             this.cb_Nsx.DisplayMember = "TenNhaSanXuat";
             this.cb_Nsx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Nsx.FormattingEnabled = true;
-            this.cb_Nsx.Location = new System.Drawing.Point(297, 338);
+            this.cb_Nsx.Location = new System.Drawing.Point(238, 347);
             this.cb_Nsx.Name = "cb_Nsx";
             this.cb_Nsx.Size = new System.Drawing.Size(169, 33);
             this.cb_Nsx.TabIndex = 42;
@@ -267,7 +247,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(79, 341);
+            this.label6.Location = new System.Drawing.Point(79, 350);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 25);
             this.label6.TabIndex = 41;
@@ -277,16 +257,54 @@
             // 
             this.nHASANXUATTableAdapter.ClearBeforeFill = true;
             // 
+            // tb_min
+            // 
+            this.tb_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_min.Location = new System.Drawing.Point(238, 297);
+            this.tb_min.Name = "tb_min";
+            this.tb_min.Size = new System.Drawing.Size(108, 30);
+            this.tb_min.TabIndex = 44;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(79, 297);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 25);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Tồn Tối Thiểu";
+            // 
+            // tb_max
+            // 
+            this.tb_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_max.Location = new System.Drawing.Point(536, 300);
+            this.tb_max.Name = "tb_max";
+            this.tb_max.Size = new System.Drawing.Size(108, 30);
+            this.tb_max.TabIndex = 46;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(395, 300);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 25);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Tồn Tối Đa";
+            // 
             // ThemHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 485);
+            this.Controls.Add(this.tb_max);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.tb_min);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cb_Nsx);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cb_TrangThaiHH);
             this.Controls.Add(this.cb_LoaiHH);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.btn_HuyBo);
             this.Controls.Add(this.btn_LamLai);
             this.Controls.Add(this.btn_TaoMoi);
@@ -314,7 +332,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_HuyBo;
         private System.Windows.Forms.Button btn_LamLai;
         private System.Windows.Forms.Button btn_TaoMoi;
@@ -327,7 +344,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_TenHH;
         private System.Windows.Forms.ComboBox cb_LoaiHH;
-        private System.Windows.Forms.ComboBox cb_TrangThaiHH;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource lOAIHANGHOABindingSource;
         private DataSet1TableAdapters.LOAIHANGHOATableAdapter lOAIHANGHOATableAdapter;
@@ -340,5 +356,9 @@
         private DataSet1 dataSet11;
         private System.Windows.Forms.BindingSource nHASANXUATBindingSource;
         private DataSet1TableAdapters.NHASANXUATTableAdapter nHASANXUATTableAdapter;
+        private System.Windows.Forms.TextBox tb_min;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tb_max;
+        private System.Windows.Forms.Label label8;
     }
 }

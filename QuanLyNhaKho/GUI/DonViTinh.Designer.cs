@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new QuanLyNhaKho.DataSet1();
             this.button2 = new System.Windows.Forms.Button();
             this.tb_Ten = new System.Windows.Forms.TextBox();
             this.tb_ID = new System.Windows.Forms.TextBox();
@@ -39,11 +41,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.dONVITINHTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.DONVITINHTableAdapter();
             this.maDonViTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDonViTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new QuanLyNhaKho.DataSet1();
-            this.dONVITINHTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.DONVITINHTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -77,6 +77,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(723, 357);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            // 
+            // dONVITINHBindingSource
+            // 
+            this.dONVITINHBindingSource.DataMember = "DONVITINH";
+            this.dONVITINHBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button2
             // 
@@ -159,33 +169,23 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // dONVITINHTableAdapter
+            // 
+            this.dONVITINHTableAdapter.ClearBeforeFill = true;
+            // 
             // maDonViTinhDataGridViewTextBoxColumn
             // 
             this.maDonViTinhDataGridViewTextBoxColumn.DataPropertyName = "MaDonViTinh";
-            this.maDonViTinhDataGridViewTextBoxColumn.HeaderText = "MaDonViTinh";
+            this.maDonViTinhDataGridViewTextBoxColumn.HeaderText = "Mã Đơn Vị";
             this.maDonViTinhDataGridViewTextBoxColumn.Name = "maDonViTinhDataGridViewTextBoxColumn";
             this.maDonViTinhDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenDonViTinhDataGridViewTextBoxColumn
             // 
             this.tenDonViTinhDataGridViewTextBoxColumn.DataPropertyName = "TenDonViTinh";
-            this.tenDonViTinhDataGridViewTextBoxColumn.HeaderText = "TenDonViTinh";
+            this.tenDonViTinhDataGridViewTextBoxColumn.HeaderText = "Tên Đơn Vị";
             this.tenDonViTinhDataGridViewTextBoxColumn.Name = "tenDonViTinhDataGridViewTextBoxColumn";
             this.tenDonViTinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dONVITINHBindingSource
-            // 
-            this.dONVITINHBindingSource.DataMember = "DONVITINH";
-            this.dONVITINHBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dONVITINHTableAdapter
-            // 
-            this.dONVITINHTableAdapter.ClearBeforeFill = true;
             // 
             // DonViTinh
             // 
