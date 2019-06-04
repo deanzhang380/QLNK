@@ -38,10 +38,10 @@ namespace QuanLyNhaKho.GUI
         {
             tb_ID.Text= dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             tb_Ten.Text= dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cb_LoaiHangHoa.Text = bus.Getnamelhh(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+            cb_LoaiHangHoa.SelectedText = bus.Getnamelhh(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
             cb_Donvi.Text = bus.Getnamedv(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
             cb_Nsx.Text = bus.Getnamensx(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
-            cb_TrangThaiHH.Text = bus.Getnametthh(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+            cb_TrangThaiHH.SelectedText = bus.Getnametthh(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
             tb_soluongton.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 

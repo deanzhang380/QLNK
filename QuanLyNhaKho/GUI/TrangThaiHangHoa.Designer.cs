@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSet1 = new QuanLyNhaKho.DataSet1();
             this.tRANGTHAIHANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new QuanLyNhaKho.DataSet1();
             this.tRANGTHAIHANGHOATableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.TRANGTHAIHANGHOATableAdapter();
-            this.maTrangThaiHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenTrangTHaiHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.tb_Ten = new System.Windows.Forms.TextBox();
             this.tb_ID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.maTrangThaiHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenTrangTHaiHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tRANGTHAIHANGHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,31 +72,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(708, 357);
             this.dataGridView1.TabIndex = 12;
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tRANGTHAIHANGHOABindingSource
             // 
             this.tRANGTHAIHANGHOABindingSource.DataMember = "TRANGTHAIHANGHOA";
             this.tRANGTHAIHANGHOABindingSource.DataSource = this.dataSet1;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tRANGTHAIHANGHOATableAdapter
             // 
             this.tRANGTHAIHANGHOATableAdapter.ClearBeforeFill = true;
-            // 
-            // maTrangThaiHangDataGridViewTextBoxColumn
-            // 
-            this.maTrangThaiHangDataGridViewTextBoxColumn.DataPropertyName = "MaTrangThaiHang";
-            this.maTrangThaiHangDataGridViewTextBoxColumn.HeaderText = "MaTrangThaiHang";
-            this.maTrangThaiHangDataGridViewTextBoxColumn.Name = "maTrangThaiHangDataGridViewTextBoxColumn";
-            // 
-            // tenTrangTHaiHangDataGridViewTextBoxColumn
-            // 
-            this.tenTrangTHaiHangDataGridViewTextBoxColumn.DataPropertyName = "TenTrangTHaiHang";
-            this.tenTrangTHaiHangDataGridViewTextBoxColumn.HeaderText = "TenTrangTHaiHang";
-            this.tenTrangTHaiHangDataGridViewTextBoxColumn.Name = "tenTrangTHaiHangDataGridViewTextBoxColumn";
             // 
             // button4
             // 
@@ -155,6 +143,18 @@
             this.button1.Text = "Chỉnh sửa";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // maTrangThaiHangDataGridViewTextBoxColumn
+            // 
+            this.maTrangThaiHangDataGridViewTextBoxColumn.DataPropertyName = "MaTrangThaiHang";
+            this.maTrangThaiHangDataGridViewTextBoxColumn.HeaderText = "Mã Trạng Thái Hàng Hóa";
+            this.maTrangThaiHangDataGridViewTextBoxColumn.Name = "maTrangThaiHangDataGridViewTextBoxColumn";
+            // 
+            // tenTrangTHaiHangDataGridViewTextBoxColumn
+            // 
+            this.tenTrangTHaiHangDataGridViewTextBoxColumn.DataPropertyName = "TenTrangTHaiHang";
+            this.tenTrangTHaiHangDataGridViewTextBoxColumn.HeaderText = "Tên Trạng Thái Hàng Hóa";
+            this.tenTrangTHaiHangDataGridViewTextBoxColumn.Name = "tenTrangTHaiHangDataGridViewTextBoxColumn";
+            // 
             // TrangThaiHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,8 +173,8 @@
             this.Text = "TrangThaiHangHoa";
             this.Load += new System.EventHandler(this.TrangThaiHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tRANGTHAIHANGHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,13 +187,13 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource tRANGTHAIHANGHOABindingSource;
         private DataSet1TableAdapters.TRANGTHAIHANGHOATableAdapter tRANGTHAIHANGHOATableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maTrangThaiHangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenTrangTHaiHangDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox tb_Ten;
         private System.Windows.Forms.TextBox tb_ID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maTrangThaiHangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenTrangTHaiHangDataGridViewTextBoxColumn;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyNhaKho.Bus
 {
@@ -38,14 +39,14 @@ namespace QuanLyNhaKho.Bus
 
         }
 
-        public void Insert(string ma, string mahh, string max,string min)
-        {
-            sql.InsertGHT(ma, mahh, min, max);
-        }
-
         public void Update(string ma, string min, string max)
         {
             sql.UpdateGHT(min, max, ma);
+        }
+        public void RefeshDS(DataGridView dt, DataSet1 dataSet1)
+        {
+            sql.Fill(dataSet1.GIOIHANTON);
+            dt.DataSource = dataSet1.GIOIHANTON;
         }
     }
 }

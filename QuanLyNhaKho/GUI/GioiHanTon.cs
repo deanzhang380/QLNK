@@ -45,25 +45,6 @@ namespace QuanLyNhaKho.GUI
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (Check_TB(tb_Max.Text) == false || Check_TB(tb_Min.Text) == false)
-            {
-                MessageBox.Show("Giá trị ở 2 ô giới hạn phải là con số");
-                return;
-            }
-            try
-            {
-                bus.Insert(tb_ID_GHT.Text, cb_IDHH.SelectedValue.ToString(), tb_Max.Text, tb_Min.Text);
-                MessageBox.Show("Thêm giới hạn tồn mới thành công");
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Thêm giới hạn tồn mới thất bại");
-            }
-            
-            
-        }
         public bool Check_TB(string t)
         {
             for (int i = 0; i < t.Length; i++)
@@ -87,7 +68,9 @@ namespace QuanLyNhaKho.GUI
             {
                 bus.Update(tb_ID_GHT.Text, tb_Min.Text, tb_Max.Text);
                 MessageBox.Show("Cập nhật thành công");
-            }catch(Exception)
+                bus.RefeshDS(dataGridView1, dataSet1);
+            }
+            catch(Exception)
             {
                 MessageBox.Show("Cập nhật thất bại");
             }

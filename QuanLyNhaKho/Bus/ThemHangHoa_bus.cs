@@ -9,6 +9,7 @@ namespace QuanLyNhaKho.Bus
     class ThemHangHoa_bus
     {
         DataSet1TableAdapters.HANGHOATableAdapter sql = new DataSet1TableAdapters.HANGHOATableAdapter();
+        DataSet1TableAdapters.GIOIHANTONTableAdapter ght = new DataSet1TableAdapters.GIOIHANTONTableAdapter();
         public string CreateId()
         {
             String temp;
@@ -36,9 +37,41 @@ namespace QuanLyNhaKho.Bus
             }
         }
 
-        public void Insert(string ma, string ten, string loai, string donvi, string trangthai, string nsx)
+        public void Insert(string ma, string ten, string loai, string donvi, string nsx)
         {
-            sql.Insert(ma, ten, trangthai, donvi, nsx, loai,0);
+            sql.Insert(ma, ten, "TTHH_003", donvi, nsx, loai,0);
+        }
+
+        public string CreateId_GHT()
+        {
+            String temp;
+            int id;
+            int? num = ght.Count();
+            if (num == 0)
+            {
+                return "GHT_001";
+            }
+
+            temp = ght.GetLastID();
+            id = Convert.ToInt32(temp.Substring(4));
+            id += 1;
+            if (id < 10)
+            {
+                return "GHT_00" + id.ToString();
+            }
+            else if (id >= 10 && id < 100)
+            {
+                return "GHT_0" + id.ToString();
+            }
+            else
+            {
+                return "GHT_" + id.ToString();
+            }
+
+        }
+        public void Insert_GHT(string ma, string mahh, string max, string min)
+        {
+            ght.InsertGHT(ma, mahh, min, max);
         }
     }
 }

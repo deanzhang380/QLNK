@@ -42,7 +42,6 @@
             this.dataSet1 = new QuanLyNhaKho.DataSet1();
             this.nHANVIENTableAdapter = new QuanLyNhaKho.DataSet1TableAdapters.NHANVIENTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tb_MaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -108,7 +107,7 @@
             // 
             this.maNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.maNhanVienDataGridViewTextBoxColumn.DataPropertyName = "MaNhanVien";
-            this.maNhanVienDataGridViewTextBoxColumn.HeaderText = "MaNhanVien";
+            this.maNhanVienDataGridViewTextBoxColumn.HeaderText = "Mã Nhân Viên";
             this.maNhanVienDataGridViewTextBoxColumn.Name = "maNhanVienDataGridViewTextBoxColumn";
             this.maNhanVienDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -116,7 +115,7 @@
             // 
             this.tenNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tenNhanVienDataGridViewTextBoxColumn.DataPropertyName = "TenNhanVien";
-            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "TenNhanVien";
+            this.tenNhanVienDataGridViewTextBoxColumn.HeaderText = "Tên Nhân Viên";
             this.tenNhanVienDataGridViewTextBoxColumn.Name = "tenNhanVienDataGridViewTextBoxColumn";
             this.tenNhanVienDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -124,7 +123,7 @@
             // 
             this.taiKhoanDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.taiKhoanDataGridViewTextBoxColumn.DataPropertyName = "TaiKhoan";
-            this.taiKhoanDataGridViewTextBoxColumn.HeaderText = "TaiKhoan";
+            this.taiKhoanDataGridViewTextBoxColumn.HeaderText = "Tài Khoản";
             this.taiKhoanDataGridViewTextBoxColumn.Name = "taiKhoanDataGridViewTextBoxColumn";
             this.taiKhoanDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -132,7 +131,7 @@
             // 
             this.matKhauDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "MatKhau";
-            this.matKhauDataGridViewTextBoxColumn.HeaderText = "MatKhau";
+            this.matKhauDataGridViewTextBoxColumn.HeaderText = "Mật Khẩu";
             this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
             this.matKhauDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -140,7 +139,7 @@
             // 
             this.maTrangThaiNhanVienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.maTrangThaiNhanVienDataGridViewTextBoxColumn.DataPropertyName = "MaTrangThaiNhanVien";
-            this.maTrangThaiNhanVienDataGridViewTextBoxColumn.HeaderText = "MaTrangThaiNhanVien";
+            this.maTrangThaiNhanVienDataGridViewTextBoxColumn.HeaderText = "Mã Trạng Thái Nhân Viên";
             this.maTrangThaiNhanVienDataGridViewTextBoxColumn.Name = "maTrangThaiNhanVienDataGridViewTextBoxColumn";
             this.maTrangThaiNhanVienDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -148,7 +147,7 @@
             // 
             this.maChucVuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.maChucVuDataGridViewTextBoxColumn.DataPropertyName = "MaChucVu";
-            this.maChucVuDataGridViewTextBoxColumn.HeaderText = "MaChucVu";
+            this.maChucVuDataGridViewTextBoxColumn.HeaderText = "Mã Chức Vụ";
             this.maChucVuDataGridViewTextBoxColumn.Name = "maChucVuDataGridViewTextBoxColumn";
             this.maChucVuDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -156,7 +155,7 @@
             // 
             this.soDienThoaiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.soDienThoaiDataGridViewTextBoxColumn.DataPropertyName = "SoDienThoai";
-            this.soDienThoaiDataGridViewTextBoxColumn.HeaderText = "SoDienThoai";
+            this.soDienThoaiDataGridViewTextBoxColumn.HeaderText = "Số Điện Thoại";
             this.soDienThoaiDataGridViewTextBoxColumn.Name = "soDienThoaiDataGridViewTextBoxColumn";
             this.soDienThoaiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -177,7 +176,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(79, 608);
+            this.button1.Location = new System.Drawing.Point(194, 608);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(247, 53);
             this.button1.TabIndex = 2;
@@ -185,21 +184,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(428, 608);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(247, 53);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(769, 608);
+            this.button3.Location = new System.Drawing.Point(612, 608);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(247, 53);
             this.button3.TabIndex = 4;
@@ -379,7 +367,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_MaNV);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -404,15 +391,7 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource nHANVIENBindingSource;
         private DataSet1TableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVienDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVienDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taiKhoanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maTrangThaiNhanVienDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maChucVuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoaiDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox tb_MaNV;
         private System.Windows.Forms.Label label2;
@@ -432,5 +411,12 @@
         private DataSet1TableAdapters.TRANGTHAINHANVIENTableAdapter tRANGTHAINHANVIENTableAdapter;
         private System.Windows.Forms.ComboBox cb_CV;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taiKhoanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maTrangThaiNhanVienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maChucVuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoaiDataGridViewTextBoxColumn;
     }
 }

@@ -47,7 +47,8 @@ namespace QuanLyNhaKho.GUI
             }
             try
             {
-                bus.Insert(tb_MaHH.Text, tb_TenHH.Text, cb_LoaiHH.SelectedValue.ToString(), cb_Donvi.SelectedValue.ToString(), cb_TrangThaiHH.SelectedValue.ToString(), cb_Nsx.SelectedValue.ToString());
+                bus.Insert(tb_MaHH.Text, tb_TenHH.Text, cb_LoaiHH.SelectedValue.ToString(), cb_Donvi.SelectedValue.ToString(), cb_Nsx.SelectedValue.ToString());
+                bus.Insert_GHT(bus.CreateId_GHT(), tb_MaHH.Text, tb_max.Text, tb_min.Text);
                 MessageBox.Show("Thêm mới hàng hóa thành công");
 
             }catch(Exception)

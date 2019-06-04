@@ -108,17 +108,37 @@ namespace QuanLyNhaKho.Bus
         public void UpdateSoLuongTon(string ma, int soluongnhap,int dau)
         {
             int? temp = hh.GetSLT(ma);
-
+           
             if (dau == 1)
             {
+                
                 temp += soluongnhap;
+                if(temp>Int32.Parse(hh.GetMax(ma)))
+                {
+                    return;
+                }
             }
             if(dau==0)
             {
                 temp -= soluongnhap;
+                if(temp<Int32.Parse(hh.GetMin(ma)))
+                {
+                    return;
+                }
             }
-           
             hh.UpdateSLT(temp, ma);
+            if (temp > Int32.Parse(hh.GetMin(ma)) && temp < Int32.Parse(hh.GetMax(ma)))
+            {
+                hh.UpdateTTHH("TTHH_001", ma);
+
+            }
+
+            if (temp ==Int32.Parse(hh.GetMax(ma)))
+            {
+                hh.UpdateTTHH("TTHH_004", ma);
+            }
+
+
         }
 
         public void DeleteHH(string ma_pn, string ma_HH)
