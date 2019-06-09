@@ -7,9 +7,12 @@
     }
 }
 
-namespace QuanLyNhaKho.DataSet1TableAdapters {
-    
-    
+namespace QuanLyNhaKho.DataSet1TableAdapters
+{
+    partial class Search_PhieuXuatTableAdapter
+    {
+    }
+
     public partial class NHANVIENTableAdapter {
     }
 }

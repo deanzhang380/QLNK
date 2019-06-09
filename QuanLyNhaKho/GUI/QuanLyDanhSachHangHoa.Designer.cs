@@ -167,6 +167,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1082, 261);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // maHangHoaDataGridViewTextBoxColumn
@@ -268,7 +269,7 @@
             this.cb_Nsx.FormattingEnabled = true;
             this.cb_Nsx.Location = new System.Drawing.Point(672, 524);
             this.cb_Nsx.Name = "cb_Nsx";
-            this.cb_Nsx.Size = new System.Drawing.Size(169, 33);
+            this.cb_Nsx.Size = new System.Drawing.Size(422, 33);
             this.cb_Nsx.TabIndex = 48;
             this.cb_Nsx.ValueMember = "MaNhaSanXuat";
             // 
@@ -291,6 +292,7 @@
             // 
             this.cb_TrangThaiHH.DataSource = this.tRANGTHAIHANGHOABindingSource;
             this.cb_TrangThaiHH.DisplayMember = "TenTrangTHaiHang";
+            this.cb_TrangThaiHH.Enabled = false;
             this.cb_TrangThaiHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_TrangThaiHH.FormattingEnabled = true;
             this.cb_TrangThaiHH.Location = new System.Drawing.Point(672, 462);

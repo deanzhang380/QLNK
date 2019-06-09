@@ -264,5 +264,20 @@ namespace QuanLyNhaKho
             panel1.Controls.Add(form);
             form.Show();
         }
+
+        private void panel1_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            
+        }
+
+        private void danhSáchPhiếuXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Form form = new QuanLyDanhSachPhieuXuat();
+            SetCenter(form);
+            form.TopLevel = false;
+            panel1.Controls.Add(form);
+            form.Show();
+        }
     }
 }

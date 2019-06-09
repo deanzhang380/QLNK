@@ -56,14 +56,22 @@ namespace QuanLyNhaKho.GUI
                 MessageBox.Show("Hãy lập phiếu nhập trước");
                 return;
             }
+           
 
             try
             {
-                bus.Insert_CTPN(ma_pn, cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), tb_diengiai.Text);
-                MessageBox.Show("Thêm hàng hóa thành công");
-                bus.RefeshDS(dataGridView1, dataSet1, ma_pn);
-                bus.UpdateSoLuongTon(cb_MaHH.SelectedValue.ToString(),Int32.Parse(tb_Soluongnhap.Text),1);
 
+                if (bus.UpdateSoLuongTon(cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), 1) == 0)
+                {
+                    
+                    MessageBox.Show("Hàng Nhập quá số lượng giới hạn");
+                }
+                else
+                {
+                    bus.Insert_CTPN(ma_pn, cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), tb_diengiai.Text);
+                    bus.RefeshDS(dataGridView1, dataSet1, ma_pn);
+                    MessageBox.Show("Thêm hàng hóa thành công");
+                }
             }
             catch(Exception)
             {
@@ -123,6 +131,28 @@ namespace QuanLyNhaKho.GUI
             cb_MaHH.SelectedValue = "";
         }
 
-       
+        private void button4_Click(object sender, EventArgs e)
+        {
+            bus.UpdateTTP(tb_ID.Text);
+            this.Close();
+        }
+
+        private void PhieuNhap_Leave(object sender, EventArgs e)
+        {
+         }
+
+        private void PhieuNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            try
+            {
+                bus.UpdateTTP(tb_ID.Text);
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

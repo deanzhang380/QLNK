@@ -98,9 +98,9 @@
             // dt_ngaylap
             // 
             this.dt_ngaylap.Enabled = false;
-            this.dt_ngaylap.Location = new System.Drawing.Point(161, 72);
+            this.dt_ngaylap.Location = new System.Drawing.Point(177, 72);
             this.dt_ngaylap.Name = "dt_ngaylap";
-            this.dt_ngaylap.Size = new System.Drawing.Size(230, 22);
+            this.dt_ngaylap.Size = new System.Drawing.Size(223, 22);
             this.dt_ngaylap.TabIndex = 12;
             // 
             // label2
@@ -148,7 +148,7 @@
             // 
             this.tb_NameNV.Enabled = false;
             this.tb_NameNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NameNV.Location = new System.Drawing.Point(588, 24);
+            this.tb_NameNV.Location = new System.Drawing.Point(605, 21);
             this.tb_NameNV.Name = "tb_NameNV";
             this.tb_NameNV.Size = new System.Drawing.Size(251, 30);
             this.tb_NameNV.TabIndex = 28;
@@ -156,7 +156,7 @@
             // tb_nd
             // 
             this.tb_nd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nd.Location = new System.Drawing.Point(588, 69);
+            this.tb_nd.Location = new System.Drawing.Point(605, 69);
             this.tb_nd.Multiline = true;
             this.tb_nd.Name = "tb_nd";
             this.tb_nd.Size = new System.Drawing.Size(350, 98);
@@ -166,7 +166,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(411, 72);
+            this.label7.Location = new System.Drawing.Point(428, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 25);
             this.label7.TabIndex = 25;
@@ -176,7 +176,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(411, 27);
+            this.label14.Location = new System.Drawing.Point(428, 24);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(147, 25);
             this.label14.TabIndex = 27;
@@ -187,6 +187,7 @@
             // 
             this.cb_trangthai.DataSource = this.tRANGTHAINHAPXUATBindingSource;
             this.cb_trangthai.DisplayMember = "TenTrangThaiPhieu";
+            this.cb_trangthai.Enabled = false;
             this.cb_trangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_trangthai.FormattingEnabled = true;
             this.cb_trangthai.Location = new System.Drawing.Point(175, 117);
@@ -275,7 +276,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(415, 70);
+            this.label6.Location = new System.Drawing.Point(430, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(162, 25);
             this.label6.TabIndex = 24;
@@ -283,9 +284,9 @@
             // 
             // dt_ngaynhap
             // 
-            this.dt_ngaynhap.Location = new System.Drawing.Point(573, 73);
+            this.dt_ngaynhap.Location = new System.Drawing.Point(607, 73);
             this.dt_ngaynhap.Name = "dt_ngaynhap";
-            this.dt_ngaynhap.Size = new System.Drawing.Size(230, 22);
+            this.dt_ngaynhap.Size = new System.Drawing.Size(222, 22);
             this.dt_ngaynhap.TabIndex = 23;
             this.dt_ngaynhap.ValueChanged += new System.EventHandler(this.dt_ngaynhap_ValueChanged);
             // 
@@ -509,8 +510,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(160, 46);
             this.button4.TabIndex = 39;
-            this.button4.Text = "Đóng";
+            this.button4.Text = "Hoàn thành";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -539,7 +541,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PhieuNhap";
             this.Text = "PhieuNhap";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuNhap_FormClosing);
             this.Load += new System.EventHandler(this.PhieuNhap_Load);
+            this.Leave += new System.EventHandler(this.PhieuNhap_Leave);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tRANGTHAINHAPXUATBindingSource)).EndInit();

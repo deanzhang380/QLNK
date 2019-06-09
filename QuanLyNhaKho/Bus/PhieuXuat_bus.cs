@@ -45,7 +45,7 @@ namespace QuanLyNhaKho.Bus
 
         public void Insert(string ma, string malp, string manv, string matt, DateTime dt_ngaylap, DateTime dt_ngaynhap, string kh)
         {
-            sql.Insert(ma, malp, manv, matt, dt_ngaylap, dt_ngaynhap, kh);
+            sql.Insert(ma, malp, manv, "TTP_001", dt_ngaylap, dt_ngaynhap, kh);
 
         }
 
@@ -106,17 +106,18 @@ namespace QuanLyNhaKho.Bus
             return hh.GetSLT(ma);
         }
 
-        public void UpdateSoLuongTon(string ma, int soluongnhap, int dau)
+        public int UpdateSoLuongTon(string ma, int soluongnhap, int dau)
         {
+            int flag = -1;
             int? temp = hh.GetSLT(ma);
 
             if (dau == 1)
             {
-
                 temp += soluongnhap;
                 if (temp > Int32.Parse(hh.GetMax(ma)))
                 {
-                    return;
+                    
+                    return flag;
                 }
             }
             if (dau == 0)
@@ -124,7 +125,8 @@ namespace QuanLyNhaKho.Bus
                 temp -= soluongnhap;
                 if (temp < Int32.Parse(hh.GetMin(ma)))
                 {
-                    return;
+                    flag = 0;
+                    return flag;
                 }
             }
             hh.UpdateSLT(temp, ma);
@@ -134,15 +136,23 @@ namespace QuanLyNhaKho.Bus
 
             }
 
-            if (temp == Int32.Parse(hh.GetMax(ma)))
+            if (temp == Int32.Parse(hh.GetMin(ma)))
             {
-                hh.UpdateTTHH("TTHH_004", ma);
+                hh.UpdateTTHH("TTHH_002", ma);
             }
+
+            return flag;
         }
 
         public void DeleteHH(string ma_pn, string ma_HH)
         {
             ctpx.DeleteCTPX(ma_HH, ma_pn);
+        }
+
+        public void UpdateTTP(string ma_pn)
+        {
+
+            sql.UpdateTTP("TTP_002", ma_pn);
         }
     }
 }
