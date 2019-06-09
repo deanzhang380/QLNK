@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
-            this.button5 = new System.Windows.Forms.Button();
-            this.tb_searchPN = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.dt_ngaynhap = new System.Windows.Forms.DateTimePicker();
@@ -87,24 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lOAIPHIEUXUATNHAPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(346, 27);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(33, 29);
-            this.button5.TabIndex = 40;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // tb_searchPN
-            // 
-            this.tb_searchPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_searchPN.Location = new System.Drawing.Point(171, 27);
-            this.tb_searchPN.Name = "tb_searchPN";
-            this.tb_searchPN.Size = new System.Drawing.Size(169, 30);
-            this.tb_searchPN.TabIndex = 39;
-            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,7 +90,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(160, 46);
             this.button4.TabIndex = 39;
-            this.button4.Text = "Đóng";
+            this.button4.Text = "Hoàn thành";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -129,10 +107,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.tb_searchPN);
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(4, 504);
@@ -142,34 +117,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết phiếu xuất";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 32);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(140, 25);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "Tìm phiếu xuất";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 60);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1070, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(1070, 224);
             this.dataGridView1.TabIndex = 19;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(474, 69);
+            this.label6.Location = new System.Drawing.Point(451, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 25);
             this.label6.TabIndex = 32;
@@ -177,7 +142,7 @@
             // 
             // dt_ngaynhap
             // 
-            this.dt_ngaynhap.Location = new System.Drawing.Point(654, 72);
+            this.dt_ngaynhap.Location = new System.Drawing.Point(629, 74);
             this.dt_ngaynhap.Name = "dt_ngaynhap";
             this.dt_ngaynhap.Size = new System.Drawing.Size(230, 22);
             this.dt_ngaynhap.TabIndex = 31;
@@ -226,7 +191,7 @@
             // tb_nd
             // 
             this.tb_nd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nd.Location = new System.Drawing.Point(588, 69);
+            this.tb_nd.Location = new System.Drawing.Point(629, 57);
             this.tb_nd.Multiline = true;
             this.tb_nd.Name = "tb_nd";
             this.tb_nd.Size = new System.Drawing.Size(350, 98);
@@ -236,7 +201,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(411, 72);
+            this.label7.Location = new System.Drawing.Point(451, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 25);
             this.label7.TabIndex = 25;
@@ -267,7 +232,7 @@
             // 
             this.tb_NameNV.Enabled = false;
             this.tb_NameNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NameNV.Location = new System.Drawing.Point(588, 24);
+            this.tb_NameNV.Location = new System.Drawing.Point(629, 21);
             this.tb_NameNV.Name = "tb_NameNV";
             this.tb_NameNV.Size = new System.Drawing.Size(251, 30);
             this.tb_NameNV.TabIndex = 28;
@@ -487,7 +452,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(411, 27);
+            this.label14.Location = new System.Drawing.Point(451, 32);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(147, 25);
             this.label14.TabIndex = 27;
@@ -497,6 +462,7 @@
             // 
             this.cb_trangthai.DataSource = this.tRANGTHAINHAPXUATBindingSource;
             this.cb_trangthai.DisplayMember = "TenTrangThaiPhieu";
+            this.cb_trangthai.Enabled = false;
             this.cb_trangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_trangthai.FormattingEnabled = true;
             this.cb_trangthai.Location = new System.Drawing.Point(175, 117);
@@ -568,7 +534,6 @@
             this.Text = "PhieuXuat";
             this.Load += new System.EventHandler(this.PhieuXuat_Load);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -584,13 +549,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox tb_searchPN;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dt_ngaynhap;

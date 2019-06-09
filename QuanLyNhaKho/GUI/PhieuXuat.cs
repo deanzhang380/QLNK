@@ -29,14 +29,14 @@ namespace QuanLyNhaKho.GUI
             {
                 bus.Insert(tb_ID.Text, cb_loaiphieu.SelectedValue.ToString(), taikhoan, cb_trangthai.SelectedValue.ToString(),
                     dt_ngaylap.Value.Date, dt_ngaynhap.Value.Date, tb_nd.Text);
-                MessageBox.Show("Tạo phiếu nhập thành công");
+                MessageBox.Show("Tạo phiếu xuất thành công");
                 ma_px = tb_ID.Text;
                 bus.RefeshDS(dataGridView1, dataSet1, ma_px);
                 flag = true;
             }
             catch (Exception)
             {
-                MessageBox.Show("Tạo phiếu nhập thất bại");
+                MessageBox.Show("Tạo phiếu xuất thất bại");
             }
         }
 
@@ -68,10 +68,16 @@ namespace QuanLyNhaKho.GUI
 
             try
             {
-                bus.Insert_CTPX(ma_px, cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), tb_diengiai.Text);
-                MessageBox.Show("Thêm hàng hóa thành công");
-                bus.RefeshDS(dataGridView1, dataSet1, ma_px);
-                bus.UpdateSoLuongTon(cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), 0);
+                if(bus.UpdateSoLuongTon(cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), 0) == 0)
+                {
+                    MessageBox.Show("Hàng hóa xuất quá số lượng tồn trong kho");
+                }
+                else
+                {
+                    bus.Insert_CTPX(ma_px, cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), tb_diengiai.Text);
+                    MessageBox.Show("Thêm hàng hóa thành công");
+                    bus.RefeshDS(dataGridView1, dataSet1, ma_px);
+                }
 
             }
             catch (Exception)
@@ -100,6 +106,7 @@ namespace QuanLyNhaKho.GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
+            bus.UpdateTTP(tb_ID.Text);
             this.Close();
         }
 

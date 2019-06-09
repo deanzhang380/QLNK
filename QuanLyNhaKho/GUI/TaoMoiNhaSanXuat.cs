@@ -46,7 +46,15 @@ namespace QuanLyNhaKho.GUI
 
         private void btn_TaoMoi_Click(object sender, EventArgs e)
         {
-            bus.InsertNSX(tb_Ma.Text, tb_Ten.Text, tb_Diachi.Text, tb_Dienthoai.Text);
+            try
+            {
+                bus.InsertNSX(tb_Ma.Text, tb_Ten.Text, tb_Diachi.Text, tb_Dienthoai.Text);
+                MessageBox.Show("Thêm nhà cung ứng thành công");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thêm nhà cung ứng thất bại");
+            }
         }
 
         private void btn_LamLai_Click(object sender, EventArgs e)

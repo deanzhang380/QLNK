@@ -60,10 +60,7 @@ namespace QuanLyNhaKho.GUI
 
         private void cb_MaHH_TextChanged(object sender, EventArgs e)
         {
-            tb_TenHH.Text = bus.GetNameHangHoa(cb_MaHH.Text);
-            tb_LHH.Text = bus.GetNameLHH(cb_MaHH.Text);
-            tb_dv.Text = bus.GetNameDV(cb_MaHH.Text);
-            tb_soluongton.Text = bus.GetNameSL(cb_MaHH.Text).ToString();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,18 +77,18 @@ namespace QuanLyNhaKho.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                bus.Insert_CTPN(tb_ID.Text, cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), tb_diengiai.Text);
-                MessageBox.Show("Thêm hàng hóa thành công");
-                bus.RefeshDS(dataGridView1, dataSet11, tb_ID.Text);
-                bus.UpdateSoLuongTon(cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), 1);
+            //try
+            //{
+            //    bus.Insert_CTPN(tb_ID.Text, cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), tb_diengiai.Text);
+            //    MessageBox.Show("Thêm hàng hóa thành công");
+            //    bus.RefeshDS(dataGridView1, dataSet11, tb_ID.Text);
+            //    bus.UpdateSoLuongTon(cb_MaHH.SelectedValue.ToString(), Int32.Parse(tb_Soluongnhap.Text), 1);
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Thêm hàng hóa thất bại");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Thêm hàng hóa thất bại");
+            //}
         }
 
         private void button3_Click(object sender, EventArgs e)

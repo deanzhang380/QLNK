@@ -51,13 +51,13 @@ namespace QuanLyNhaKho.GUI
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string mapn= dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string malpx= dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string manv= dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            string mattp= dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string ngaylapphieu= dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            string ngaynhap= dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-            string nd= dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            string mapn = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string malpx = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string manv = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string mattp = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string ngaylapphieu = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            string ngaynhap = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            string nd = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
 
             Form form = new ChiTietPhieuNhap(mapn, malpx,manv,mattp,ngaylapphieu,ngaynhap,nd);
             form.Show();

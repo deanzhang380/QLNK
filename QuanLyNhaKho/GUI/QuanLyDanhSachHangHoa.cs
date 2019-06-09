@@ -31,17 +31,17 @@ namespace QuanLyNhaKho.GUI
             this.lOAIHANGHOATableAdapter.Fill(this.dataSet1.LOAIHANGHOA);
             // TODO: This line of code loads data into the 'dataSet1.HANGHOA' table. You can move, or remove it, as needed.
             this.hanghoaTableAdapter1.Fill(this.dataSet1.HANGHOA);
-
+            Refesh();
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             tb_ID.Text= dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             tb_Ten.Text= dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cb_LoaiHangHoa.SelectedText = bus.Getnamelhh(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+            cb_LoaiHangHoa.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             cb_Donvi.Text = bus.Getnamedv(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
             cb_Nsx.Text = bus.Getnamensx(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
-            cb_TrangThaiHH.SelectedText = bus.Getnametthh(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+            cb_TrangThaiHH.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             tb_soluongton.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
@@ -75,6 +75,11 @@ namespace QuanLyNhaKho.GUI
             cb_Donvi.SelectedValue = "";
             cb_LoaiHangHoa.SelectedValue = "";
             cb_Nsx.SelectedValue = "";
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
